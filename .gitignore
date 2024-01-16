@@ -1,0 +1,8 @@
+.gradle
+**/build
+**/out
+**/build/**
+**/generated
+!gradle/wrapper/gradle-wrapper.jar
+.idea
+**/*.log*

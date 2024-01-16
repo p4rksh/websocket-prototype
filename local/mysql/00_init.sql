@@ -1,0 +1,7 @@
+CREATE USER 'test'@'%' IDENTIFIED BY 'test';
+
+GRANT ALL PRIVILEGES ON *.* TO 'test'@'%';
+
+CREATE DATABASE IF NOT EXISTS chat;
+
+USE chat;

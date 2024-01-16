@@ -1,0 +1,18 @@
+spring:
+  jpa:
+    database-platform: org.hibernate.dialect.MySQL57Dialect
+    show-sql: false
+    hibernate:
+      ddl-auto: validate
+    generate-ddl: false
+    open-in-view: false
+    properties:
+      default_batch_fetch_size: 50
+      format_sql: true
+      id.new_generator_mappings: true
+      hibernate.query.in_clause_parameter_padding: true
+      hibernate.jdbc.batch_size: 1000
+      hibernate.hibernate.order_inserts: true
+      hibernate.use_sql_comments: true
+      hibernate.temp.use_jdbc_metadata_defaults: false
+      hibernate.connection.provider_disables_autocommit: true

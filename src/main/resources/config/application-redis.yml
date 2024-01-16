@@ -1,0 +1,28 @@
+---
+spring.redis:
+  client-type: LETTUCE
+  client-name: "${spring.application.name}"
+  ssl: false
+  connectTimeout: 1s
+  timeout: 1s
+  lettuce:
+    pool:
+      enabled: true
+      max-wait: 2s
+      time-between-eviction-runs: 30s
+
+---
+spring.config.activate.on-profile: local
+
+spring.redis:
+  host: localhost
+  port: 6379
+
+---
+spring.config.activate.on-profile: dev
+---
+spring.config.activate.on-profile: beta
+---
+spring.config.activate.on-profile: stage
+---
+spring.config.activate.on-profile: prod

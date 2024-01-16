@@ -1,0 +1,8 @@
+spring.config.import:
+  - classpath:/config/application-database.yml
+  - classpath:/config/application-jpa.yml
+  - classpath:/config/application-redis.yml
+---
+
+server:
+  port: 8080
