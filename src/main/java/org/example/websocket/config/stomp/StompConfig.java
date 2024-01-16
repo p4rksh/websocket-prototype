@@ -20,6 +20,7 @@ public class StompConfig implements WebSocketMessageBrokerConfigurer {
     @Override
     public void registerStompEndpoints(StompEndpointRegistry registry) {
         registry.addEndpoint("/ws")
+                .setAllowedOrigins("https://jxy.me/")   // 테스트 tool
                 .withSockJS();
     }
 

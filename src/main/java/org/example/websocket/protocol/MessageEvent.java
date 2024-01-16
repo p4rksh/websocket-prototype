@@ -14,6 +14,7 @@ import java.time.LocalDateTime;
 @Getter
 public abstract class MessageEvent<T> implements Serializable {
 
+    private String id;
     private String roomId;
     private MessageType type;
     private T payload;

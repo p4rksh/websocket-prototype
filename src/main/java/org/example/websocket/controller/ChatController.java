@@ -3,7 +3,7 @@ package org.example.websocket.controller;
 import lombok.RequiredArgsConstructor;
 import org.example.websocket.controller.resource.NoticeMessageReq;
 import org.example.websocket.controller.resource.TextMessageReq;
-import org.example.websocket.service.chat.ChatAppService;
+import org.example.websocket.service.chat.ChatMessageDispatcher;
 import org.springframework.messaging.handler.annotation.MessageMapping;
 import org.springframework.stereotype.Controller;
 
@@ -11,15 +11,15 @@ import org.springframework.stereotype.Controller;
 @RequiredArgsConstructor
 public class ChatController {
 
-    private final ChatAppService service;
+    private final ChatMessageDispatcher messageDispatcher;
 
     @MessageMapping("/chat/text")
     public void text(TextMessageReq req) {
-        service.send(req);
+        messageDispatcher.dispatch(req);
     }
 
     @MessageMapping("/chat/notice")
     public void notice(NoticeMessageReq req) {
-        service.send(req);
+        messageDispatcher.dispatch(req);
     }
 }
